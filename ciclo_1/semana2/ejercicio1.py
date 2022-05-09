@@ -29,6 +29,7 @@ else:
 
 # dado dos variables determinar si es mayor, menor o igual
 
+'''
 x = 10
 y = 20
 
@@ -38,3 +39,37 @@ elif x > y:
     print('"x" es mayor a "y"')
 else:
     print('"x" y "y" son iguales')
+'''
+
+'''
+letra = 'a'
+
+if letra == 'a':
+    print('Mal Resultado')
+elif letra == 'b':
+    print('Buen Resultado')
+elif letra == 'c':
+    print('Cerca, pero no es correcto')
+'''
+
+x = 9
+y = 32
+
+'''
+if x == y:
+    print('x es igual a y')
+else:
+    if x > y:
+        print('x es mayor a y')
+    else:
+        print('x es menor a y')
+'''
+
+temperatura_fahr = input('Ingrese la temperatura en grados fahr: ')
+
+try:
+    fahr = float(temperatura_fahr)
+    cel = (fahr - 32.0) * 5.0 / 9.0
+    print(cel)
+except:
+    print('Numero invalido')
