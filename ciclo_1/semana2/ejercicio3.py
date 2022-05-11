@@ -145,6 +145,8 @@ cadena = r'Hola \n Mundo'
 print(cadena)
 
 
+# Método count
+
 cadena = 'un uno, un dos, un tres'
 
 # sacar 4, hay 4 "un" en la cadena
@@ -156,5 +158,38 @@ print(cadena.count('un',10))
 # sacar 3, si hay 3 "un" entre la posición 0 y la posición 10
 print(cadena.count('un',0,10))
 
+
+# Método replace
+
+cadena = 'un uno, un dos, un tres'
+
+print(cadena.replace('un','XXX')) # saca por pantalla "XXX XXXo, XXX dos, XXX tres"
+print(cadena.replace('un', 'XXXX', 2))
+
+
+# Método format
+
+var1 = 10
+var2 = 20
+
+print('El valor es: {}'.format(12))
+print('El valor es: {}'.format(12.43523))
+
+print('Los valores son {}, {} y {}'.format(1,2,3))
+print('Los valores son {2}, {0} y {1}'.format(1,2,3))
+
+print('Los valores son {}, {}'.format(var1,var2))
+
+print('Los valores son: {num1},{num2}'.format(num1 = 1,num2 = 2) )
+
+msg = 'Hola' * 3
+msg2 = 'mundo'
+print(msg + msg2)
+
+mensaje = 'Hola'
+mensaje += ' '
+mensaje += 'mundo'
+
+print(mensaje)
 
 
