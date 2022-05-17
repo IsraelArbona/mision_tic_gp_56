@@ -138,3 +138,97 @@ print()
 print(datos.keys())
 print()
 print(datos.values())
+
+
+# ejercicio 9
+
+diccionario9 = {
+    'clave1': 598,
+    'clave2': True,
+    'clave3': 'Armando'
+}
+
+
+print(diccionario9)
+print(type(diccionario9))
+
+print(diccionario9['clave1'])
+print(type(diccionario9['clave1']))
+print(diccionario9['clave2'])
+print(type(diccionario9['clave2']))
+print(diccionario9['clave3'])
+print(type(diccionario9['clave3']))
+print()
+
+
+# Encapsulamiento con diccionarios.
+
+def promedioNotas2(dicNotas):
+    sumatoria = 0
+    sumatoria += dicNotas['Nota1']
+    sumatoria += dicNotas['Nota2']
+    sumatoria += dicNotas['Nota3']
+    sumatoria += dicNotas['Nota4']
+
+    promedio = round(sumatoria/4, 2)
+    return promedio
+
+dicNotas = {}
+dicNotas['Nota1'] = 4.5
+dicNotas['Nota2'] = 3
+dicNotas['Nota3'] = 3.5
+dicNotas['Nota4'] = 1
+
+print('El promedio es de: ', promedioNotas2(dicNotas))
+
+
+def promedioNotas3(dicNotas):
+    sumatoria = 0
+    sumatoria += dicNotas['Nota1']
+    sumatoria += dicNotas['Nota2']
+    sumatoria += dicNotas['Nota3']
+    sumatoria += dicNotas['Nota4']
+
+    promedio = round(sumatoria/4, 2)
+    return promedio
+
+dicNotas3 = {
+    'Nota1' : 3.5,
+    'Nota2' : 4.0,
+    'Nota3' : 2,
+    'Nota4' : 4.7
+}
+
+print('El promedio es de: ', promedioNotas3(dicNotas3))
+
+
+# Paso entre funciones
+
+def reportePromedio(dicReporte):
+    return dicReporte['estudiante'] + " = " + str(dicReporte['promedio'])
+
+def generarReporteNotas(dicNotas):
+    sumatoria = 0
+    sumatoria += dicNotas['Nota1']
+    sumatoria += dicNotas['Nota2']
+    sumatoria += dicNotas['Nota3']
+    sumatoria += dicNotas['Nota4']
+
+    promedio = round(sumatoria/4, 2)
+
+    reporteNotas = {
+        'promedio': promedio,
+        'estudiante': dicNotas['estudiante']
+    }
+
+    return reporteNotas
+
+dicNotas4 = {
+    'estudiante': 'Beneficiario Rodriguez',
+    'Nota1' : 3.5,
+    'Nota2' : 4.0,
+    'Nota3' : 2,
+    'Nota4' : 4.7
+}
+
+print(reportePromedio(generarReporteNotas(dicNotas4)))
