@@ -54,6 +54,7 @@ for x in range(len(lista)):
 
 # Ejercicio 3
 
+'''
 lista = [[1],[1,2],[1,2,3],[1,2,3,4],[1,2,3,4,5]]
 
 resultado = 0
@@ -61,3 +62,35 @@ for x in range(len(lista)):
     for k in range(len(lista[x])):
         resultado += lista[x][k]
 print(resultado)
+'''
+
+# Ejercicio 4
+
+padres = list()
+hijos = list()
+
+for x in range(3):
+    pa = input('Ingrese el nombre del padre. ')
+    ma = input('Ingrese el nombre de la madre.')
+    padres.append([pa,ma])
+
+    cantidad = int(input('Cantidad de hijos en la familia. '))
+    hijos.append([])
+    for k in range(cantidad):
+        hi = input('Ingrese el nombre del hij@. ')
+        hijos[x].append(hi)
+
+
+print('\nListado de padre, madre e hijos\n')
+
+for x in range(len(padres)):
+    print('Padre: ',padres[x][0])
+    print('Madre: ',padres[x][1])
+    for k in range(len(hijos[x])):
+        print('Hij@ : ',hijos[x][k])
+
+print('\nListado de padre con la cantidad de hijos \n')
+
+for x in range(len(padres)):
+    print('Padre : ', padres[x][0])
+    print('Hijos : ', len(hijos[x]))
