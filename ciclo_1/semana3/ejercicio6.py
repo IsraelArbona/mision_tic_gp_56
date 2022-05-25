@@ -20,7 +20,7 @@ tareas = {
 }
 
 # Crear una nueva tarea.
-def create (tareas,identificador,tareasNueva):
+def create(tareas,identificador,tareasNueva):
     tareas[identificador] = tareasNueva
     return tareas
 
@@ -32,6 +32,12 @@ def read(tareas):
             print(valor, ', ', end='')
         print()
     print()
+
+def validarTarea(identificador,tareas):
+    if identificador in tareas:
+        return True
+    else:
+        False
 
 opcion = 0
 while opcion != 5:
@@ -46,21 +52,23 @@ while opcion != 5:
     opcion = int(input('Ingrese la opcion : '))
 
     if opcion == 1:
-        print('\n-> Adicionar la tarea')
+        print('\n-> Adicionar la tarea \n')
 
         identificador = str(input('Ingresar el identificador de la tarea: '))
-        descripcion = str(input('Ingresar la descripción de la tarea: '))
-        estado = str(input('Ingresar el estado de la tarea: '))
-        tiempo = int(input('Ingresar el tiempo de la tarea: '))
 
-        tareasNueva = {
-            'descripcion': descripcion,
-            'estado': estado,
-            'tiempo': tiempo
-        }
+        if validarTarea(identificador, tareas) == False:
+            descripcion = str(input('Ingresar la descripción de la tarea: '))
+            estado = str(input('Ingresar el estado de la tarea: '))
+            tiempo = int(input('Ingresar el tiempo de la tarea: '))
 
-        # función para agregar una tarea
-        tareas = create(tareas,identificador,tareasNueva)
+            tareasNueva = {
+                'descripcion': descripcion,
+                'estado': estado,
+                'tiempo': tiempo
+            }
+
+            # función para agregar una tarea
+            tareas = create(tareas,identificador,tareasNueva)
 
     elif opcion == 2:
         print()
@@ -74,3 +82,28 @@ while opcion != 5:
         print('-> Actulizar Tarea')
         print()
 
+        identificador = str(input('Ingrese el identificador de la tarea para modificar : '))
+
+        if validarTarea(identificador,tareas):
+            nuevaDescripcion = str(input('Nueva descripción : '))
+            if nuevaDescripcion:
+                tareas[identificador]['descripcion'] = nuevaDescripcion
+            nuevoEstado = str(input('Nuevo estado : '))
+            if nuevoEstado:
+                tareas[identificador]['estado'] = nuevoEstado
+            nuevoTiempo = int(input('Nuevo tiempo : '))
+            if nuevoTiempo:
+                tareas[identificador]['tiempo'] = nuevoTiempo
+        else:
+            print('No ha sido encontrada la tarea.')
+    elif opcion == 4:
+        print()
+        print('-> Eliminar Tarea')
+        print()
+
+        identificador = str(input('Ingrese el identificador de la tarea a eliminar : '))
+
+        if validarTarea(identificador, tareas):
+            tareas.pop(identificador)
+        else:
+            print('La tarea pendiente no fue eliminada.')
