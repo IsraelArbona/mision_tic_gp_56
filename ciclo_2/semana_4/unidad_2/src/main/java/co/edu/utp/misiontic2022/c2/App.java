@@ -76,7 +76,7 @@ public class App
 
         */
 
-
+        /* 
         int[][] numeros = { 
             { 1, 2, 3, 4, 5},
             { 6, 7, 8, 9, 10},
@@ -100,6 +100,17 @@ public class App
         } catch (Exception e) {
             System.out.println("Errores encontrados: ");
             e.printStackTrace();
+        }
+
+        */
+
+        File archivoEli = new File("prueba.txt");
+
+        if (!archivoEli.exists()){
+            System.out.println("El archivo no existe");
+        } else {
+            archivoEli.delete();
+            System.out.println("El archivo ha sido eliminado");
         }
     }
 }
